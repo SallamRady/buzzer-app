@@ -16,17 +16,17 @@ import { RiMenu2Line } from "react-icons/ri";
 export default function MainNavbar() {
   //*  return ui
   return (
-    <nav class="bg-none w-full z-20 top-0 start-0 sticky mb-4">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-none w-full z-20 top-0 start-0 sticky mb-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <Link
           href={HOME_PATH}
-          class="flex items-center space-x-3 rtl:space-x-reverse"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <LogoImage width={70} height={60} />
         </Link>
         {/* right list and mumporger Btn */}
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <NavbarList>
             <NavbarIconBtn
               icon={<IoPerson size={20} />}
@@ -44,13 +44,13 @@ export default function MainNavbar() {
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >
-            <span class="sr-only">Open main menu</span>
+            <span className="sr-only">Open main menu</span>
             <svg
-              class="w-5 h-5"
+              className="w-5 h-5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -68,7 +68,7 @@ export default function MainNavbar() {
         </div>
         {/* middle part */}
         <div
-          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
           <NavbarList>

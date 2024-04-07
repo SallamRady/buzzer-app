@@ -2,7 +2,7 @@ export default function MainBtn({ text, type, className }) {
   return (
     <button
       type={type ?? "button"}
-      class={`
+      className={`
       text-gray-900 
       bg-white
       border-amber-400

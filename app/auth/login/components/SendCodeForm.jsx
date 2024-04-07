@@ -17,11 +17,11 @@ export default function SendCodeForm() {
   };
   return (
     <>
-      <h6 class="text-lg font-bold dark:text-white my-2">Welcome!</h6>
+      <h6 className="text-lg font-bold dark:text-white my-2">Welcome!</h6>
       <MainParagraph
         statment={"Enter the authentication code we sent at*******896"}
       />
-      <form class="max-w-sm mt-10" onSubmit={handleSubmit}>
+      <form className="max-w-sm mt-10" onSubmit={handleSubmit}>
         <TextInputField
           placeholder={"Phone Number"}
           handleOnChange={() => {}}

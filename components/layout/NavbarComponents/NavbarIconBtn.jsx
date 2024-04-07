@@ -3,7 +3,7 @@ export default function NavbarIconBtn({ icon, handleOnClick }) {
   return (
     <button
       type="button"
-      class=" text-slate-300 hover:text-slate-500 font-medium rounded-full p-2.5 text-center inline-flex items-center"
+      className=" text-slate-300 hover:text-slate-500 font-medium rounded-full p-2.5 text-center inline-flex items-center"
       onClick={handleOnClick}
     >
       {icon}

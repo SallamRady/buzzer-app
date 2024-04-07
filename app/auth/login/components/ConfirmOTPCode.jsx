@@ -5,11 +5,11 @@ import MainParagraph from "@/components/text/MainParagraph";
 export default function ConfirmOTPCode() {
   return (
     <>
-      <h6 class="text-lg font-bold dark:text-white my-2">Login Code</h6>
+      <h6 className="text-lg font-bold dark:text-white my-2">Login Code</h6>
       <MainParagraph
         statment={"Enter the authentication code we sent at*******896"}
       />
-      <form class="max-w-sm mt-10">
+      <form className="max-w-sm mt-10">
         <TextInputField
           placeholder={"+971 2356 5896"}
           disabled={true}

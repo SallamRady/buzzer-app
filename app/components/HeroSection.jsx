@@ -3,18 +3,17 @@ import heroSec from "@/assets/home/heroSec.png";
 import MainParagraph from "@/components/text/MainParagraph";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
+import "./customStyle.css";
 
 export default function HeroSection() {
   // Return our UI
   return (
     <div
-      className="absolute  top-0 left-0  overflow-hidden  bg-cover bg-fixed bg-no-repeat p-12"
+      className="absolute  top-0 left-0  overflow-hidden  bg-cover bg-fixed bg-no-repeat p-12 MainHeroSection"
       style={{
         backgroundImage: `url(${imgSrc.src})`,
-        height: "400px",
         backgroundColor: "rgba(0, 0, 0, 0.6)",
-        height: "100vh",
-        width: "100vw",
+        width: "100%",
         backgroundSize: "100% 100%",
       }}
     >
@@ -35,6 +34,7 @@ export default function HeroSection() {
           className={"text-white text-md"}
         />
         {/* Search form */}
+
         <form className="md:min-w-[480px] my-3 mt-14">
           <div class="relative">
             <input
@@ -51,7 +51,7 @@ export default function HeroSection() {
               type="submit"
               class="text-white absolute end-2.5  bottom-2.5 bg-yellow-500 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
             >
-              <FaSearch fontSize={22}/>
+              <FaSearch fontSize={22} />
             </button>
           </div>
         </form>

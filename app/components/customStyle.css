@@ -1,0 +1,13 @@
+/* Mobile */
+@media only screen and (min-width: 480px) {
+  .MainHeroSection {
+    min-height: 80vh;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .MainHeroSection {
+    min-height: 50vh;
+  }
+}

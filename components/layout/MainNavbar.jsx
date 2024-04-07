@@ -27,7 +27,7 @@ export default function MainNavbar() {
         </Link>
         {/* right list and mumporger Btn */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <NavbarList>
+          <NavbarList className={' hidden md:flex'}>
             <NavbarIconBtn
               icon={<IoPerson size={20} />}
               handleOnClick={() => {}}

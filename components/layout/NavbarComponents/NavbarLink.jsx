@@ -11,7 +11,7 @@ export default function NavbarLink({ path, text }) {
       <Link
         href={path}
         className={`block py-2 px-3 ${
-          pathname == path ? "text-amber-400" : "text-slate-300"
+          pathname == path ? "text-amber-400 underline underline-offset-8 font-bold " : "text-slate-300"
         } md:bg-transparent`}
       >
         {text}

@@ -36,11 +36,11 @@ export default function HeroSection() {
         {/* Search form */}
 
         <form className="md:min-w-[480px] my-3 mt-14">
-          <div class="relative">
+          <div className="relative">
             <input
               type="search"
               id="default-search"
-              class={`
+              className={`
               block w-full p-4 ps-10 text-lg
               text-white rounded-full border-0 outline-none`}
               placeholder="Search "
@@ -49,7 +49,7 @@ export default function HeroSection() {
             />
             <button
               type="submit"
-              class="text-white absolute end-2.5  bottom-2.5 bg-yellow-500 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+              className="text-white absolute end-2.5  bottom-2.5 bg-yellow-500 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
             >
               <FaSearch fontSize={22} />
             </button>

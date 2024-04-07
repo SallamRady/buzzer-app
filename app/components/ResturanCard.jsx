@@ -24,11 +24,12 @@ export default function ResturanCard() {
         <h2 className="my-2 text-xl font-bold">Card title</h2>
         <p className="my-2 text-xl h-3 text-red-500">Cafe</p>
         <MainParagraph
+          className="flex justify-center items-center"
           statment={
-            <div className="flex justify-center items-center">
-              <FaLocationDot color="#350202" style={{margin:'0 5px'}} />
+            <>
+              <FaLocationDot color="#350202" style={{ margin: "0 5px" }} />
               Main Market Riyadh, KSA
-            </div>
+            </>
           }
         />
       </div>

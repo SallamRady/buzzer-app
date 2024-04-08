@@ -7,3 +7,21 @@
   margin: 0;
   padding: 0;
 }
+
+
+.footer-container {
+  position: relative;
+}
+
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/FooterBG.png');
+  background-size: cover;
+  filter: brightness(20%); /* Apply desired filter effect */
+  z-index: -1;
+}

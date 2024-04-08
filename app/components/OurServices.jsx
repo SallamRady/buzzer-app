@@ -6,13 +6,13 @@ import imgR from "@/assets/home/borgarr.png";
 
 export default function OurServices() {
   return (
-    <div className="my-10 w-full mx-0">
+    <div className="hidden md:block my-10 w-full mx-0">
       <SectionHeader text={"Our Services"} />
-      <div className="relative w-full flex justify-center items-end">
+      <div className="relative w-full flex justify-center items-end h-[270px]">
         <Image
           src={imgL.src}
           className="absolute top-0 left-0  max-w-xs max-h-80 hidden md:inline-block mb-2"
-          width={350}
+          width={300}
           height={300}
           alt="img"
         />
@@ -25,7 +25,7 @@ export default function OurServices() {
         <Image
           src={imgR.src}
           className="absolute top-0 right-0 max-w-xs max-h-80 hidden md:inline-block"
-          width={350}
+          width={220}
           height={300}
           alt="img"
         />

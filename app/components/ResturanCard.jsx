@@ -7,7 +7,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function ResturanCard() {
   return (
-    <div className="block rounded-lg bg-white shadow-lg shadow-secondary-1 dark:bg-surface-dark w-[300px] m-1 border-2 border-gray-200">
+    <div className="block rounded-lg bg-white shadow-lg shadow-secondary-1 dark:bg-surface-dark w-[280px] m-1 border-2 border-gray-200">
       {/* card image */}
       <Link href="#">
         <Image

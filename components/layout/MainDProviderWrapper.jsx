@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "@/redux/store";
 import { usePathname } from "next/navigation";
 import MainNavbar from "./MainNavbar";
+import MainFooter from "./MainFooter";
 
 export default function MainDataProviderWrapper({ children }) {
   // TODO::declare our component state
@@ -15,6 +16,8 @@ export default function MainDataProviderWrapper({ children }) {
       {/* Not show Navbar in auth pages */}
       {!pathname.includes("auth") && <MainNavbar />}
       {children}
+      {/* Not show Navbar in auth pages */}
+      {!pathname.includes("auth") && <MainFooter />}
     </Provider>
   );
 }

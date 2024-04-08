@@ -3,7 +3,7 @@ export default function ContainerDiv({ className, children }) {
     <div
       className={`flex justify-center items-center w-full ${className ?? ""}`}
     >
-      <div className="w-11/12">{children}</div>
+      <div className="w-10/12">{children}</div>
     </div>
   );
 }

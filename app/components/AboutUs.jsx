@@ -52,7 +52,7 @@ export default function AboutUs() {
                 </>
               }
             />
-            <MainBtn text={"View All"} />
+            <MainBtn  text={"View All"} />
           </div>
         </div>
       </ContainerDiv>

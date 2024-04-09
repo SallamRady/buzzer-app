@@ -86,7 +86,7 @@ export default function MainFooter() {
           <h5 className="font-bold mt-2 mb-8">Subscribe</h5>
           <ul className="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
             <li className="my-2">
-              <MainBtn
+              <MainBtn 
                 text={
                   <div className="flex justify-between items-center">
                     <IoMail className="mr-5" />
@@ -97,7 +97,7 @@ export default function MainFooter() {
               />
             </li>
             <li className="my-2">
-              <MainBtn text={"Subscribe"} className={"border-3"} />
+              <MainBtn  text={"Subscribe"} className={"border-3"} />
             </li>
           </ul>
         </div>

@@ -13,7 +13,7 @@ export default function ResturantsList() {
           return <ResturanCard key={`p-${idx}`} />;
         })}
       </div>
-      <MainBtn text={"View All"} className={' my-5'} />
+      <MainBtn  text={"View All"} className={' my-5'} />
     </ContainerDiv>
   );
 }

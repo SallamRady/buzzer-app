@@ -102,7 +102,7 @@ export default function LoginPage() {
             <MainParagraph
               statment={
                 <>
-                  Don't have an Account?{" "}
+                  Dont have an Account?{" "}
                   <Link href="/" className="text-red-500">
                     Register
                   </Link>

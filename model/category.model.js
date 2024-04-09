@@ -6,11 +6,8 @@ import {
   collection,
   doc,
   getDoc,
-  getDocFromCache,
   getDocs,
-  query,
   updateDoc,
-  where,
 } from "firebase/firestore";
 
 // TODO::deine and declare helpers variables

@@ -16,19 +16,20 @@ export default function Tab2() {
   //TODO::define and declare Methods
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dataaa", {
-      id: mainCategory,
-      subCategory,
-    });
 
     try {
       let response = await createSubCategory({
         id: mainCategory,
         subCategory,
       });
-      console.log("response00", response);
+      if (response) {
+        alert("Subcategory created suucessfuly :)");
+      } else {
+        alert("Save SubCat. Faild :(");
+      }
     } catch (error) {
       console.log("Error create sub cat client::", error);
+      alert("Save SubCat. Faild :(");
     }
   };
 
@@ -49,7 +50,11 @@ export default function Tab2() {
         >
           <option selected>Choose a Main Category</option>
           {options.map((item) => {
-            return <option value={item.id}>{item.caterory}</option>;
+            return (
+              <option key={item.id} value={item.id}>
+                {item.caterory}
+              </option>
+            );
           })}
         </select>
         <TextInputField

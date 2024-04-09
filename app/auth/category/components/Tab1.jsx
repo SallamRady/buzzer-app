@@ -1,15 +1,27 @@
 "use client";
 import MainBtn from "@/components/btns/MainBtn";
 import TextInputField from "@/components/form/TextInputField";
+import { createMainCategory } from "@/model/category.model";
 import { useState } from "react";
 
 export default function Tab1() {
   //TODO:: define and declare component variable and state
-  const [Category, setCategory] = useState("");
+  const [category, setCategory] = useState("");
 
   //TODO::define and declare Methods
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      let created = await createMainCategory({ caterory:category });
+      if (created) {
+        alert("Category Created Successfully :)");
+        setCategory("");
+      } else {
+        alert("Save Main Category is Faild :(");
+      }
+    } catch (error) {
+      console.log("Error create main cat client::", error);
+    }
   };
 
   return (

@@ -1,7 +1,17 @@
 "use server";
 
 import { db } from "@/firebase.config";
-import { addDoc, collection } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocFromCache,
+  getDocs,
+  query,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 
 // TODO::deine and declare helpers variables
 const TABLE_NAME = "categories";
@@ -10,12 +20,18 @@ const TABLE_NAME = "categories";
  * readAllData
  * return all categories
  */
-async function readAllData() {
+export async function readAllData() {
   try {
     const querySnapshot = await getDocs(collection(db, TABLE_NAME));
 
-    console.log("Read Categories Data is done::", querySnapshot);
-    return querySnapshot;
+    let arr = [];
+    await querySnapshot.forEach((doc) => {
+      arr.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+    return arr;
   } catch (err) {
     console.error("Error reading data: ", err);
   }
@@ -43,16 +59,39 @@ export async function createMainCategory(data) {
   }
 }
 
-async function createSubCategory(data) {
+/**
+ * createMainCategory
+ * save main category to firestore.
+ * @param {*} data object must contain
+ * - id : id of main category
+ * - subCategory : name of sub category
+ */
+export async function createSubCategory(data) {
   try {
     let { id, subCategory } = data;
     const docRef = doc(db, TABLE_NAME, id);
-    await updateDoc(docRef, {
-      advice: "Demo",
-    });
-    return true;
+    const prevData = await getSpecificDoc(id);
+    if (prevData) {
+      let arr = [...prevData.children, subCategory];
+      await updateDoc(docRef, {
+        children: arr,
+      });
+      return true;
+    } else {
+      return false;
+    }
   } catch (err) {
     console.log("Error in Save SubCat.::", err);
     return false;
+  }
+}
+
+export async function getSpecificDoc(id) {
+  try {
+    const querySnapshot = await getDoc(doc(db, TABLE_NAME, id));
+    if (querySnapshot.exists()) return { ...querySnapshot.data() };
+    return undefined;
+  } catch (err) {
+    console.error("Error reading data: ", err);
   }
 }

@@ -1,16 +1,40 @@
 "use client";
 import MainBtn from "@/components/btns/MainBtn";
 import TextInputField from "@/components/form/TextInputField";
-import { useState } from "react";
+import { createSubCategory, readAllData } from "@/model/category.model";
+import { useEffect, useState } from "react";
 
 export default function Tab2() {
   //TODO:: define and declare component variable and state
   const [mainCategory, setMainCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
+  const [options, setOptions] = useState([]);
 
+  useEffect(() => {
+    getMainCatsData();
+  }, []);
   //TODO::define and declare Methods
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Dataaa", {
+      id: mainCategory,
+      subCategory,
+    });
+
+    try {
+      let response = await createSubCategory({
+        id: mainCategory,
+        subCategory,
+      });
+      console.log("response00", response);
+    } catch (error) {
+      console.log("Error create sub cat client::", error);
+    }
+  };
+
+  const getMainCatsData = async () => {
+    let arr = await readAllData();
+    setOptions(arr);
   };
 
   return (
@@ -19,12 +43,14 @@ export default function Tab2() {
         Add Sub Category
       </h6>
       <form className="max-w-sm mt-10" onSubmit={handleSubmit}>
-        <select class="mb-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <select
+          onChange={(e) => setMainCategory(e.target.value)}
+          class="mb-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
           <option selected>Choose a Main Category</option>
-          <option value="US">United States</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
+          {options.map((item) => {
+            return <option value={item.id}>{item.caterory}</option>;
+          })}
         </select>
         <TextInputField
           placeholder={"Sub Category Name"}
